@@ -42,12 +42,12 @@ gfx_UninitedSprite(buffer1, 152, 193);  // These preserve the background to make
 gfx_UninitedSprite(buffer2, 152, 193);
 
 int main(void) {
-    removeStopHook();
-    installMenuHook();
-    removeExecuteHookInstalled();
+    // other hooks were installed here
     while (kb_AnyKey());
 
     // Default settings
+    // We'll leave these here for now
+    // aaCalc uses the same AppVar as CEaShell for theme consistency
     uint8_t colors[4] = {246, 237, 236, 0};    // If the appvar contains no theme it defaults to these settings
     uint8_t transitionSpeed = 2;    // 1 is slow, 2 is normal, 3 is fast, and 0 has no transitions
     bool is24Hour = true;
@@ -143,30 +143,9 @@ int main(void) {
     gfx_SetFontSpacing(defaultSpacing);
     gfx_SetCharData(91, thetaChar);
 
-    // Restore lowercase preferences
-    if (lowercase && !checkLowercase()) {
-        toggleLowercase(true);
-    } else if (checkLowercase() && !lowercase) {
-        lowercase = true;
-    }
-
-    // Restore hooks
-    if (getCSCHook) {
-        installGetCSCHook(getCSCHook);
-    }
-
-    if (editArchivedProg) {
-        installMenuHook();
-        installHomescreenHook();
-    } else {
-        if (checkMenuHookInstalled()) {
-            removeMenuHook();
-        }
-
-        if (checkHomescreenHookInstalled()) {
-            removeHomescreenHook();
-        }
-    }
+    // Code to restore hooks and lowercase features were here,
+    // but we'll leave that to CEaShell itself
+    // therefore we don't need hooks.h
 
     // Sprites we use to save the screen
     buffer1->height = 193;
