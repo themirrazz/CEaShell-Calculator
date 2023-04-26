@@ -1,12 +1,13 @@
 /**
  * --------------------------------------
  * 
- * CEaShell Source Code - main.c
- * By RoccoLox Programs and TIny_Hacker
- * Copyright 2022 - 2023
- * License: GPL-3.0
- * Last Build: March 24, 2023
- * Version: 1.1.5
+ * aaCalc - Calculator App for CEaShell
+ * Based on CEaShell Source Code - main.c
+ * CEaShell Source Code By RoccoLox Programs and TIny_Hacker, Copyright 2022 - 2023 (GPLv3)
+ * aaCalc is also licensed under GPLv3
+ * aaCalc's calculation features and system is made by themirrazz
+ * UI comes from the source code of CEaShell, with some modifications by themirrazz
+ * For CEaShell source code and License, visit https://github.com/RoccoLoxPrograms/CEaShell
  * 
  * --------------------------------------
 **/
